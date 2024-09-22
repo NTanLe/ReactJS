@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+      max-width: 1450px;
+    }
+  }
+}
+
+.App {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .header-container {
+
+    button.btn-login {
+      border-radius: 5px;
+      margin-right: 15px;
+      padding: 0 15px;
+      border: 1px solid #4e4d4d;
+      height: 40px;
+
+    }
+
+    button.btn-signup {
+      border-radius: 5px;
+      padding: 0 15px;
+      background-color: black;
+      border: 1px solid #4e4d4d;
+      color: white;
+      height: 40px;
+
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+
+    .bg-body-tertiary {
+      padding-top: 20px;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0) !important;
+    }
+  }
+
+  .homepage-content {
+    position: relative;
+    z-index: 1;
+    padding: 100px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .title-1 {
+      font-size: 50px;
+      font-weight: 600;
+    }
+
+    .title-2 {
+      font-size: 25px;
+      color: #333030;
+    }
+
+    .title-3 {
+      button {
+        border-radius: 5px;
+        padding: 0 15px;
+        background-color: black;
+        border: 1px solid #4e4d4d;
+        color: white;
+        height: 50px;
+
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+      }
+
+    }
+  }
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;    
+  object-fit: cover;
+  z-index: -1; 
+}
