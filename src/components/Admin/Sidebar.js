@@ -6,16 +6,17 @@ import {
   SubMenu,
   SidebarHeader,
   SidebarFooter,
-  SidebarContent,
+  SidebarContent
 } from 'react-pro-sidebar';
-
-import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaTachometerAlt, FaGem, FaGithub } from 'react-icons/fa';
 import sidebarBg from '../../assets/bg2.jpg';
 import { DiReact } from 'react-icons/di';
-
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = (props) => {
   const { image, collapsed, toggled, handleToggleSidebar } = props;
+  let navigate = useNavigate();
   return (
     <>
       <ProSidebar
@@ -25,7 +26,7 @@ const SideBar = (props) => {
         breakPoint="md"
         onToggle={handleToggleSidebar}
       >
-        <SidebarHeader>
+        <SidebarHeader >
           <div
             style={{
               padding: '24px',
@@ -36,7 +37,7 @@ const SideBar = (props) => {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
-            }}
+            }} onClick={() => { navigate('/') }}
           >
             <DiReact size={'3em'} color={"00bfff"} />
             React-JS
@@ -50,6 +51,7 @@ const SideBar = (props) => {
 
             >
               Dashboard
+              <Link to="/admin" />
             </MenuItem>
 
           </Menu>
@@ -59,9 +61,15 @@ const SideBar = (props) => {
               icon={<FaGem />}
               title="Features"
             >
-              <MenuItem> Quản lý Users</MenuItem>
-              <MenuItem> Quản lý Bài Quiz</MenuItem>
-              <MenuItem> Quản lý Câu hỏi</MenuItem>
+              <MenuItem> Quản lý Users
+                <Link to="/admin/manage-user" />
+              </MenuItem>
+              <MenuItem> Quản lý Bài Quiz
+                <Link to="/manage-user" />
+              </MenuItem>
+              <MenuItem> Quản lý Câu hỏi
+                <Link to="/manage-user" />
+              </MenuItem>
             </SubMenu>
 
           </Menu>
