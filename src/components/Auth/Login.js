@@ -3,17 +3,26 @@ import './Login.scss';
 import { useNavigate } from 'react-router-dom';
 import { postLogin } from '../../services/apiService';
 import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { loginSuccess } from '../../redux/action/userAction';
+import { ImSpinner2 } from "react-icons/im";
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);
   const handleLogin = async () => {
     //validate
 
 
     //call api
+    setIsLoading(true);
     let data = await postLogin(email, password);
     if (data && +data.EC === 0) {
+      dispatch(
+        loginSuccess(data)
+      );
       toast.success(data.EM, {
         position: "top-right",
         autoClose: 5000,
@@ -24,18 +33,19 @@ const Login = (props) => {
         progress: undefined,
         theme: "colored"
       });
-      navigate('/') 
+      navigate('/')
+      setIsLoading(false);
     }
     if (data && +data.EC !== 0) {
       toast.error(data.EM);
-
+      setIsLoading(false);
     }
   }
   return (
     <div className='login-container'>
       <div className='header '>
         <span>Don't have an account yet?</span>
-        <button onClick={()=>navigate('/register')}>Sign up</button>
+        <button onClick={() => navigate('/register')}>Sign up</button>
       </div>
       <div className='title col-3 mx-auto' onClick={() => { navigate('/') }} style={{ textDecoration: 'underline', cursor: 'pointer' }}>
         ReactJS
@@ -55,7 +65,7 @@ const Login = (props) => {
         </div>
         <span className="forgot-password">Forgot password?</span>
         <div>
-          <button type='submit' className='btn btn-primary login' onClick={() => handleLogin()}>Login</button>
+          <button type='submit' className='btn btn-primary login' onClick={() => handleLogin()} disabled={isLoading}> {isLoading && <ImSpinner2 className="loaderIcon" />}<span> Login</span> </button>
         </div>
 
       </div>
