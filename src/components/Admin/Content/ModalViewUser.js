@@ -53,7 +53,7 @@ const ModalViewUser = (props) => {
               <input
                 type="email"
                 className="form-control"
-                value={email} disabled
+                value={dataView.email} disabled
               />
             </div>
             <div className="col-md-6">
@@ -69,15 +69,15 @@ const ModalViewUser = (props) => {
               <input
                 type="text"
                 className="form-control"
-                value={username} disabled
+                value={dataView.username} disabled
               />
             </div>
 
             <div className="col-md-6">
               <label className="form-label">Role</label>
               <select className="form-select" disabled>
-                <option value="USER">USER</option>
-                <option value="ADMIN">ADMIN</option>
+                <option value={dataView.role}>{dataView.role === 'ADMIN' ? 'ADMIN' : 'USER'}</option>
+
               </select>
             </div>
             <div className='col-md-12'>

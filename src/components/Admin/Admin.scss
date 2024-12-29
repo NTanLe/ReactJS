@@ -13,7 +13,20 @@
 
         .admin-header {
             height: 40px;
-            border: 1px solid green;
+            border-bottom: 1px solid rgb(94, 94, 94);
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 20px 10px 10px;
+
+            .leftside {
+                cursor: pointer;
+                font-size: 23px;
+            }
+
+            .rightside {
+                display: flex;
+                gap: 15px;
+            }
         }
 
         .admin-main {}

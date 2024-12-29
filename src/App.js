@@ -4,6 +4,7 @@ import './App.scss';
 import Header from './components/Header/Header';
 import User from './components/User/User';
 import Admin from './components/Admin/Admin';
+// import PerfectScrollbar from 'perfect-scrollbar';
 const App = () => {
   return (
     <div className="App">
@@ -15,7 +16,9 @@ const App = () => {
 
         </div>
         <div className='content-container'>
-          <Outlet />
+          {/* <PerfectScrollbar> */}
+            <Outlet />
+          {/* </PerfectScrollbar> */}
         </div>
       </div>
     </div>

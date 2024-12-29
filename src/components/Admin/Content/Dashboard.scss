@@ -1,0 +1,47 @@
+.dashboard-container {
+  padding: 15px;
+
+  .title {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .context {
+    display: flex;
+    gap: 20px;
+
+    .c-left {
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+
+      .child {
+        width: calc(50% - 20px);
+        padding: 10px;
+        height: 150px;
+        border: 1px solid gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        flex-direction: column;
+
+        .text-2 {
+          font-size: 25px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .c-right {
+      width: 50%;
+      height: 300px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

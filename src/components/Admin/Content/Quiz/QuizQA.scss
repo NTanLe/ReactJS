@@ -1,0 +1,50 @@
+.questions-container {
+  padding: 15px;
+
+  .title {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .add-new-question {
+    .row {
+      .btn-add {
+        margin-top: 10px;
+
+        .icon-add {
+          cursor: pointer;
+        }
+
+        .icon-minus {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .answers-content {
+      display: flex;
+      gap: 10px;
+      padding-left: 20px;
+      padding-top: 5px;
+      align-items: center;
+
+      .isCorrect {
+        font-size: 25px;
+      }
+
+      .answer-name {}
+
+      .btn-group {
+        .icon-add-answer {
+          cursor: pointer;
+        }
+
+        .icon-minus-answer {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+}

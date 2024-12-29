@@ -37,10 +37,12 @@ const SideBar = (props) => {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
-            }} onClick={() => { navigate('/') }}
+            }}
           >
             <DiReact size={'3em'} color={"00bfff"} />
-            React-JS
+            <span>
+              React-JS
+            </span>
           </div>
         </SidebarHeader>
 
@@ -61,14 +63,14 @@ const SideBar = (props) => {
               icon={<FaGem />}
               title="Features"
             >
-              <MenuItem> Quản lý Users
+              <MenuItem> Manage Users
                 <Link to="/admin/manage-user" />
               </MenuItem>
-              <MenuItem> Quản lý Bài Quiz
-                <Link to="/manage-user" />
+              <MenuItem> Manage Quizzes
+                <Link to="/admin/manage-quizzes" />
               </MenuItem>
-              <MenuItem> Quản lý Câu hỏi
-                <Link to="/manage-user" />
+              <MenuItem> Manage Questions
+                <Link to="/admin/manage-questions" />
               </MenuItem>
             </SubMenu>
 
